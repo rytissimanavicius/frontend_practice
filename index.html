@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pagrindinis</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('input').on('change', function () {
+                    var v = $(this).val();
+                    $('h2').css('font-size', v + 'px')
+                    v = v * 0.7
+                    $('h5').css('font-size', v + 'px') * 0.2
+                    $('span').html(v);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <a href="index.html"><img class="logo" src="media/images/logo.png" alt="logo"></a>
+            <p>Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... </p>
+        </div>
+
+        <div class="topnav">
+            <a href="C:\Users\rytuc\frontend_projects\iskdk_new\index.html">Pagrindinis</a>
+            <a href="#">Kelionių paieška</a>
+            <a href="C:\Users\rytuc\frontend_projects\iskdk_new\gallery.html">Galerija</a>
+            <a id="logout_button" href="#" style="display: none;float:right" onclick="logout()">Atsijungti</a>
+            <a id="settings_button" style="display: block;float:right;" href="#" onclick="openSettingsForm()">Nustatymai</a>
+            <!-- <a id="settings_button" style="display: none;float:right;" href="#" onclick="openSettingsForm()">Nustatymai</a> -->
+            <a id="login_button" href="#" style="float:right" onclick="openLoginForm()">Prisijungti</a>
+            <a id="game_button" href="#" style="float:right" onclick="game()">Žaidimas</a>
+        </div>
+
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2 id="temporary">Bretanė, Prancūzija</h2>
+                    <h5>Apibūdinimas, 2021-04-05</h5>
+                <!-- <div style="height:200px;"><a href="#"><img src="media/images/brittany-france.jpg" alt="brittany-france"></a></div> -->
+                <div class="fakeimg" style="height:200px;">Paveikslėlis</div>
+                    <p>Lorem Ipsum... </p>
+                    <p>Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... </p>
+                </div>
+                <div class="card">
+                    <h2>Regionas, Šalis</h2>
+                    <h5>Apibūdinimas, 2021-04-05</h5>
+                <div class="fakeimg" style="height:200px;">Paveikslėlis</div>
+                    <p>Lorem Ipsum... </p>
+                    <p>Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... </p>
+                </div>
+            </div>
+            <div class="rightcolumn">
+                <div class="card">
+                    <h2>Apie mus</h2>
+                <div class="fakeimg" style="height:100px;">Paveikslėlis</div>
+                    <p>Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... Lorem Ipsum... </p>
+                </div>
+
+                <div class="card">
+                    <h2>Kontaktai</h3>
+                <div class="fakeimg"><p>Paveikslėlis</p></div>
+                <div class="fakeimg"><p>Paveikslėlis</p></div>
+                <div class="fakeimg"><p>Paveikslėlis</p></div>
+
+                </div>
+                    <div class="card">
+                        <h2>Socialiniai</h3>
+                        <p>Lorem Ipsum... </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-popup" id="myLoginForm">
+            <div id="temptemp1" class="background-color-popup">
+                <div class="form-container">
+                    <h1>Prisijungimas</h1>
+                
+                    <label for="email"><b>El. paštas</b></label>
+                    <input id="login_email" type="text" placeholder="Įveskite el. paštą" name="email">
+                
+                    <label for="psw"><b>Slaptažodis</b></label>
+                    <input id="login_password" type="password" placeholder="Įveskite slaptažodį" name="psw">
+                
+                    <button type="submit" class="btn" onclick="validateLogin()">Prisijungti</button>
+                    <button type="submit" class="btn2" onclick="openRegisterForm()">Registruotis</button>
+                    <button type="submit" class="btn cancel" onclick="closeLoginForm()">Uždaryti</button>
+                </div>
+            </div>
+        </form>
+
+        </div>
+
+        <div class="form-popup" id="myRegisterForm">
+            <div id="temptemp2" class="background-color-popup">
+                <div class="form-container">
+                    <h1>Registracija</h1>
+                
+                    <label for="name"><b>Vardas</b></label>
+                    <input id="registration_name" type="text" placeholder="Įveskite vardą" name="registration_name" value="">
+    
+                    <label for="email"><b>El. Paštas</b></label>
+                    <input id="registration_email" type="text" placeholder="Įveskite el. paštą" name="registration_email">
+                
+                    <label for="psw1"><b>Slaptažodis</b></label>
+                    <input id="registration_password1" type="password" placeholder="Įveskite slaptažodį" name="registration_password1">
+    
+                    <label for="psw2"><b>Pakartoti slaptažodį</b></label>
+                    <input id="registration_password2" type="password" placeholder="Pakartokite slaptažodį" name="registration_password2">
+                
+                    <button type="submit" class="btn" onclick="validateRegistration()">Registruotis</button>
+                    <button type="button" class="btn cancel" onclick="closeRegisterForm()">Uždaryti</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-popup" id="mySettingsForm">
+            <div id="temptemp3" class="background-color-popup">
+                <div id="test" class="form-container">
+                    <h1>Nustatymai</h1>
+                
+                    <button type="submit" class="btn" onclick="darkMode()">Nakties rėžimas</button>
+
+                    <label for="email"><b>Teksto dydis:</b></label><input style="float: right;" type="range" min="10" max="40">
+
+                    <label for="email"><b>Teksto spalva:</b>
+                    <input type="color" id="colorChanger" name="colorChanger" value="#f6b73c">
+                    <button type="submit" class="btn" onclick="changeColor()">Pakeisti spalvą</button>
+
+                    <button type="button" class="btn cancel" onclick="closeSettingsForm()">Uždaryti</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-popup" id="gameForm">
+            <div id="temptemp4" class="background-color-popup">
+                <div class="form-container">
+                    <h1>Atspėk skaičių!</h1>
+                
+                    <label for="sk"><b>Skaičius</b></label>
+                    <input id="game_sk" type="number" placeholder="1 - 100" name="game_sk" min="1" max="100" required>
+    
+                    <button type="submit" class="btn" onclick="gameLogic()">Spėti</button>
+                    <button type="button" class="btn cancel" onclick="closeGame()">Uždaryti</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2020 Rytis Simanavičius</p>
+        </div>
+    </body>
+</html>
